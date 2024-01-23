@@ -1,5 +1,5 @@
-FROM kong/kong:3.4.0-alpine
-LABEL description="Kong 3.5.0 + kong-oidc plugin"
+FROM kong/kong:3.3.1-alpine
+LABEL description="Kong 3.3.1 + kong-oidc plugin"
 ENV OIDC_PLUGIN_VERSION=1.1.0-0
 ENV JWT_PLUGIN_VERSION=1.1.0-1
 
@@ -20,5 +20,4 @@ RUN git clone --branch 20200505-access-token-processing https://github.com/BGaun
 
 RUN luarocks pack kong-plugin-jwt-keycloak ${JWT_PLUGIN_VERSION} \
      && luarocks install kong-plugin-jwt-keycloak-${JWT_PLUGIN_VERSION}.all.rock
-
 USER kong

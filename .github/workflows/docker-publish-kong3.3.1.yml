@@ -1,4 +1,4 @@
-name: Docker publish kong3.4.0
+name: Docker publish kong3.3.1
 'on':
   push:
     tags:
@@ -24,7 +24,7 @@ jobs:
         run: |
           REG=ghcr.io
           IMAGE=$(echo ${{ github.repository }} | tr '[:upper:]' '[:lower:]')
-          DOCKER_IMAGE=${REG}/${IMAGE}-3.4.0
+          DOCKER_IMAGE=${REG}/${IMAGE}-3.3.1
           VERSION=nool
           if [ "${{ github.event_name }}" = "schedule" ]; then
             VERSION=nightly
@@ -59,7 +59,7 @@ jobs:
         uses: docker/build-push-action@v4
         with:
           context: .
-          file: ./Dockerfile.kong3.5.0
+          file: ./Dockerfile.kong3.3.1
           platforms: linux/amd64
           push: true
           tags: '${{ steps.prep.outputs.tags }}'
