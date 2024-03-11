@@ -1,4 +1,4 @@
-FROM kong/kong:2.8.0
+FROM kong/kong:3.6.1
 LABEL description="Kong 2.8.0 + kong-oidc plugin"
 ENV OIDC_PLUGIN_VERSION=1.1.0-0
 ENV JWT_PLUGIN_VERSION=1.1.0-1
